@@ -4,6 +4,7 @@ Basic project to try some techs
 ## Running contacts-api
 
 ```
+$ npm i
 $ npm run start:dev
 ```
 ## Running migrations
