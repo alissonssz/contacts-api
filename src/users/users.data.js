@@ -11,7 +11,6 @@ usersData.findAllUsers = async() => {
 usersData.findUserById = async(id) => {
     const sql = 'SELECT * FROM users WHERE id = ?';
     const [users, fields] = await db.query(sql, [id]).catch((error) => { throw error});
-    console.log('users', users);
     const [user] = users;
     return user;
 }
