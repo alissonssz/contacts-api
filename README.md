@@ -39,4 +39,10 @@ Obs: Probably we'll put all these database settings into a docker image
 | DELETE  |  localhost:3000/users/:id |
 
 
+## Using MYSQL with docker
+
+```
+docker pull mysql:5.7.33
+docker run -p 3306:3306 --name mysql-db -e MYSQL_ROOT_PASSWORD=root mysql:5.7.33
+```
 
