@@ -31,7 +31,7 @@ Obs: Probably we'll put all these database settings into a docker image
 ## Using API
 
 | HTTP Method  | Endpoint  |
-|:-:|:-:|
+|--|---|
 | GET  |  localhost:3000/users |
 | GET  |  localhost:3000/users/:id |
 | POST  |  localhost:3000/users |
