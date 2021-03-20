@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 var bodyParser = require('body-parser');
 const cors = require('cors');
-
+const connectDB = require('./database/database.config');
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -23,6 +23,7 @@ app.use(function(req, res, next) {
 });
 
 app.options('*', cors());
+connectDB();
 
 // Set our api routes
 app.use('/api/v1', api);

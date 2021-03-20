@@ -1,34 +1,21 @@
-const mysql = require('mysql');
+const mysql = require('mysql2/promise');
 
-const config = {
-    host     : 'localhost',
-    user     : 'me',
-    password : 'secret',
-    database : 'my_db'
-  }
-const connection = mysql.createConnection(config);
-
-const connect = () => {
-    
-    return connection.connect((err) => {
-    if (err) {
-        console.log('Erro connecting to database...', err)
-        return
+const connectDB = async() => {
+    const config = {
+        host     : process.env.DB_HOST,
+        user     : process.env.DB_USER,
+        password : process.env.DB_USER_PASSWORD,
+        database : process.env.DB_NAME,
+        port     : process.env.DB_PORT,
     }
-    console.log('Connection established!')
-})}
-
-
-const disconnect = () => {
- return con.end((err) => {
-    if(err) {
-        console.log('Erro to finish connection...', err)
-        return 
-    }
-    console.log('The connection was finish...')
-})
+        
+    const connection = await mysql.createConnection(config);
+    global.db = connection;
 }
 
-module.exports = connect;
-module.exports = disconnect;
+module.exports = connectDB;
+    
+
+
+
  
