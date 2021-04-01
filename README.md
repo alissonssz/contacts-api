@@ -14,6 +14,7 @@ Pre-requisite: You should have a mysql 5.7 instance up.
 Create database if not exists
 
 ```
+$ cd /database
 $ db-migrate db:create contacts --config database.json -e dev 
 ```
 Obs: In case of throw the error "ER_BAD_DB_ERROR: Unknown database 'contacts'" remove "database": "contacts",
