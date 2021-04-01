@@ -19,6 +19,8 @@ exports.up = function(db) {
     columns: {
       id: { type: 'int', primaryKey: true, autoIncrement: true },
       name: { type: 'string', notNull: true },
+      email: { type: 'string', notNull: true, unique: true },
+      password: { type: 'string', notNull: true  },
       bithday: { type: 'string', notNull: true },
       genre: { type: 'char', notNull: true, length: 1 },
       isActive: { type: 'boolean', defaultValue: true },

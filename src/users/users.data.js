@@ -16,9 +16,9 @@ usersData.findUserById = async(id) => {
 }
 
 usersData.createUser = async(user) => {
-    const {name, bithday, genre} = user;
-    const sql = 'INSERT INTO users (name, bithday, genre) VALUES (?,?,?)';
-    const values = [name, bithday, genre];
+    const {name, email, password, bithday, genre} = user;
+    const sql = 'INSERT INTO users (name, email, password, bithday, genre) VALUES (?,?,?,?,?)';
+    const values = [name, email, password, bithday, genre];
     const [savedUser, fields] = await db.query(sql, values).catch((error) => { throw error})
     return savedUser;
 }
